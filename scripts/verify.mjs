@@ -5,7 +5,8 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const walk = (dir) => fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
   const target = path.join(dir, entry.name);
-  return entry.isDirectory() && entry.name !== "node_modules" ? walk(target) : [target];
+  if (entry.isDirectory() && ["node_modules", ".git"].includes(entry.name)) return [];
+  return entry.isDirectory() ? walk(target) : [target];
 });
 
 const files = walk(root);
