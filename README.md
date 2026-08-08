@@ -1,4 +1,4 @@
-# فلورا — Premium Flower Storefront
+# فلورا: Premium Flower Storefront
 
 فروشگاه استاتیک فارسی RTL ساخته‌شده با HTML، Bootstrap 5.3.8 RTL، CSS و JavaScript خالص.
 
